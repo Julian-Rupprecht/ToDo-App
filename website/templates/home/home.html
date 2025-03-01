@@ -1,5 +1,9 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
+<h1>Timer</h1>
+<div id="timer-string"></div>
+<button onclick="startTimer()">Start Timer</button>
+<button onclick="stopTimer()">Stop Timer</button>
 <h1>To-Do's</h1>
 <ul id="data">
   {% for task in user.tasks %}
@@ -18,4 +22,5 @@
     <button type="submit">Add To-Do</button>
   </div>
 </form>
+<script src="{{ url_for('static', filename='timer.js') }}"></script>
 {% endblock %}
