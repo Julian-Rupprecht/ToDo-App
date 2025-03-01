@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1>To-Do's</h1>
+<ul id="data">
+  {% for task in user.tasks %}
+  <li>
+    {{ task.data }}
+    <button type="button" onclick="deleteTask({{ task.id }})">
+      <span>&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="data" id="data"></textarea>
+  <br />
+  <div>
+    <button type="submit">Add To-Do</button>
+  </div>
+</form>
+{% endblock %}
